@@ -1,0 +1,94 @@
+name: SLPS_021.00
+sha1: f477d5135dc515489f5caeb86ff0d4a9a6f97ce4
+options:
+  basename: slps_021.00
+  target_path: SLPS_021.00
+  base_path: .
+  platform: psx
+  compiler: GCC
+  # migrate_rodata_to_functions: true
+  # asm_path: asm
+  # src_path: src
+  # build_path: build
+  # create_asm_dependencies: True
+
+  ld_script_path: slps_021.00.ld
+
+  find_file_boundaries: False
+  gp_value: 0x8008B190
+
+  o_as_suffix: True
+  use_legacy_include_asm: False
+
+  asm_function_macro: glabel
+  asm_jtbl_label_macro: jlabel
+  asm_data_macro: dlabel
+
+  section_order: [".rodata", ".text", ".data", ".sdata", ".sbss", ".bss", ".text"]
+  # auto_all_sections: [".data", ".rodata", ".bss"]
+
+  reloc_addrs_path:
+    - reloc_addrs.txt
+
+  # undefined_funcs_auto_path: undefined_funcs_auto.txt
+  # undefined_syms_auto_path: undefined_syms_auto.txt
+
+  extensions_path: tools/splat_ext
+
+  subalign: 2
+
+  string_encoding: ASCII
+  data_string_encoding: ASCII
+  rodata_string_guesser_level: 2
+  data_string_guesser_level: 2
+segments:
+  - name: header
+    type: header
+    start: 0x0
+
+  - name: main
+    type: code
+    start: 0x800
+    vram: 0x80010000
+    subalign: 4
+    align: 4
+    bss_size: 0x12998
+    subsegments:
+      - [0x800, rodata, 800]
+      - [0x28DC, asm]
+      - [0x11C18, c, mainLoop]
+      - [0x12488, c, initGame]
+      - [0x12C64, c, boot]
+      - [0x12D24, asm]
+      - [0x211A0, asm, psxsdk/libspu/spu]
+      - [0x21CE0, asm, psxsdk/libspu/s_ini]
+      - [0x21E40, asm, psxsdk/libspu/s_dcb]
+      - [0x2D1B0, asm, psxsdk/libsn/snmain] # __SN_ENTRY_POINT __main __do_global_dtors
+      - [0x3525C, asm, psxsdk/libcd/bios]
+      - [0x3BEBC, asm, psxsdk/libgs/gsInitGraph] 
+      - [0x3C41C, asm, psxsdk/libgs/gsSetDrawBuffOffset]
+      - [0x3C52C, asm, psxsdk/libgs/gsSetDrawBuffClip]
+      - [0x3CD5C, asm, psxsdk/libgs/gsInit3D]
+      - [0x448AC, asm, psxsdk/libgpu/p09]
+      - [0x448CC, asm, psxsdk/libgpu/p10]
+      - [0x47EE0, rodata]
+      - [0x47EF8, asm]
+      - [0x47F50, rodata, psxsdk/libcard/patch_card]
+      - [0x47F64, rodata, pxsdk/libcard/patch_card2]
+      - [0x47F78, asm, psxsdk/libcard/patch_card]
+      - [0x4800C, asm, psxsdk/libcard/patch_card2]
+      - [0x49E0C, asm, psxsdk/libapi/a36]
+      - [0x49E1C, asm, psxsdk/libapi/a37]
+      - [0x49E2C, asm, psxsdk/libapi/open]
+      - [0x49E3C, asm, psxsdk/libapi/lseek]
+      - [0x49E4C, asm, psxsdk/libapi/read]
+      - [0x49E5C, asm, psxsdk/libapi/write]
+      - [0x49E6C, asm, psxsdk/libapi/close]
+      - [0x49E7C, asm, psxsdk/libapi/nextFile]
+      - [0x49E8C, asm, psxsdk/libapi/erase]
+      - [0x49E9C, asm, psxsdk/libapi/changeClearPad]
+      - [0x49EAC, asm]
+      - [0x4A74C, data]
+      - [0x6B990, data] # sdata
+      - [0x6BB28, data] # sbss
+  - [0x1BB800]

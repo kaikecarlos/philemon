@@ -1,0 +1,134 @@
+ __fixdfsi = 0x8002fd40; // type:func
+ _dbl_shift = 0x8002fe40; // type:func
+ __floatsidf = 0x8002ff00; // type:func
+ _dbl_shift_us = 0x80030020; // type:func
+ __muldf3 = 0x800300e0; // type:func
+ _mul_mant_d = 0x800303f4; // type:func
+ _add_mant_d = 0x800304e0; // type:func
+_err_math = 0x80030590; // type:func
+
+spuMallocWIthStartAddr = 0x80030600; // type:func
+_spu_init = 0x800309a0; // type:func
+_spu_FiDMA = 0x80030de0; // type:func
+_spu_Fr_ = 0x80030e9c; // type:func
+_spu_t = 0x80030f44; // type:func
+_spu_Fw = 0x800311c4; // type:func
+_spu_Fr = 0x80031248; // type:func
+_spu_FsetRXX = 0x800312ac; // type:func
+_spu_FsetRXXa = 0x800312f0; // type:func
+_spu_FgetRXXa = 0x80031394; // type:func
+_spu_Fw1ts = 0x80031478; // type:func
+_spuInit = 0x800314e0; // type:func
+spuStart = 0x800315c8; // type:func
+_spuDataCallback = 0x80031640; // type:func
+_spu_gcSPU = 0x80031670; // type:func
+spuWrite0 = 0x80031970; // type:func
+spuSetTransferStartAddr = 0x80031ad0; // type:func
+
+_ssNoteOn = 0x80083c10;
+_ssSetProgramChange = 0x80083c14;
+
+__SN_ENTRY_POINT = 0x8003C9B0; // type:func
+main = 0x80022464; // type:func
+
+addPrim = 0x8005406c; // type:func
+termPrim = 0x800540ac; // type:func
+setSemiTrans = 0x800540cc; // type:func
+setTexWindow = 0x800543cc; // type:func
+setDrawMode = 0x8005446c; // type:func 
+
+gsClearDispArea = 0x8004be5c; // type:func
+gsClearOt = 0x8004ccbc; // type:func
+gsDefDispBuff = 0x8004c4bc; // type:func
+gsGetLs = 0x8004db5c; // type:func
+gsGetLw = 0x8004d89c; // type:func
+gsGetLws = 0x8004de2c; // type:func
+gsInitGraph = 0x8004b6bc; // type:func
+resetCallback = 0x8003FF9C; // type:func
+vsyncCallback = 0x8004002c; // type:func
+gsSetDrawBuffClip = 0x8004bd2c; // type:func
+gsSetDrawBuffOffset = 0x8004bc1c; // type:func
+setDipMask = 0x8004f650; // type:func
+gsInit3D = 0x8004c55c; // type:func
+resetGraph = 0x8004f36c; // type:func
+
+setGraphDebug = 0x8004f4e0; // type:func
+graphDebugType = 0x8007aee0;
+graphDebugReverse = 0x8007aee3;
+graphDebugLevel = 0x8007aee2;
+
+drawSyncCallback = 0x8004f5f0; // type:func
+drawSync = 0x8004f6e8; // type:func
+clearImage = 0x8004f86c; // type:func
+
+mainGameLoop = 0x80021418; // type:func
+initGame = 0x80021c88; // type:func
+
+memCardInit = 0x8005450c; // type:func
+initCard = 0x8005756c; // type:func
+initCard2 = 0x8005766c; // type:func
+stopCard = 0x80057644; // type:func
+stopCard2 = 0x8005768c; // type:func
+startCard = 0x800575fc; // type:func
+startCard2 = 0x8005767c; // type:func
+_patch_card_info = 0x8005769c; // type:func
+_patch_card = 0x80057778; // type:func
+ _copy_memcard_patch = 0x8005787c; // type:func
+exitCard = 0x800578bc; // type:func
+_bu_init = 0x800574cc; // type:func
+_card_info = 0x800574dc; // type:func
+_card_load = 0x800574ec; // type:func
+_card_write = 0x800574fc; // type:func
+_card_read = 0x8005750c; // type:func
+_new_card = 0x8005751c; // type:func
+_card_clear = 0x8005752c; // type:func
+
+memcpy = 0x80057a6c; // type:func
+memset = 0x80057aac; // type:func
+qsort = 0x80057adc; // type:func
+rand = 0x80057c6c; // type:func
+srand = 0x80057c9c; // type:func
+strcmp = 0x80057d5c; // type:func
+strcpy = 0x80057dcc; // type:func
+strlen = 0x80057e1c; // type:func
+strncmp = 0x80057e5c; // type:func
+strncpy = 0x80057edc; // type:func
+strrchr = 0x80057f4c; // type:func
+todigit = 0x8005815c; // type:func
+printf = 0x800581cc; // type:func
+prnt = 0x8005820c; // type:func
+memchr = 0x800588ac; // type:func  
+_putchar = 0x800588fc; // type:func
+_putchar_flash = 0x800589f8; // type:func
+putchar = 0x80058a34; // type:func
+sprintf = 0x80058b5c; // type:func
+memmove = 0x800593dc; // type:func
+puts = 0x8005944c; // type:func
+setjmp = 0x800594ac; // type:func
+longjmp = 0x800594e8; // type:func
+
+
+initHeap = 0x8005952c; // type:func
+flushCache = 0x8005953c; // type:func
+gpu_cw = 0x8005954c; // type:func
+deliverEvent = 0x8005957c; // type:func
+openEvent = 0x8005958c; // type:func
+closeEvent = 0x8005959c; // type:func
+waitEvent = 0x800595ac; // type:func
+testEvent = 0x800595bc; // type:func
+enableEvent = 0x800595cc; // type:func
+
+returnFromException = 0x800595dc; // type:func
+resetEntryInt = 0x800595ec; // type:func
+hookEntryInt = 0x800595fc; // type:func
+enterCriticalSection = 0x8005960c; // type:func
+exitCriticalSection = 0x8005961c; // type:func
+
+open = 0x8005962c; // type:func
+lseek = 0x8005963c; // type:func 
+read = 0x8005964c; // type:func
+write = 0x8005965c; // type:func
+close = 0x8005966c; // type:func
+nextfile = 0x8005967c; // type:func
+erase = 0x8005968c; // type:func
+changeclearpad = 0x8005969c; // type:func
